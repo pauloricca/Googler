@@ -1,3 +1,4 @@
+<?include __DIR__.'/header.html'?>
 <form method="get" action="search.php"><input type="text" name="query" placeholder="search term"/><input type="submit" value="search"/></form>
 
 <br><br>
@@ -20,9 +21,10 @@ if(file_exists(__DIR__.'/output'))
 				$langPath = "$dirPath/$lang";
 				if (substr($langPath, -5) == '.json')
 				{
+					if(!$atLeastOneResultSet) echo 'Previous Queries:<br>';
 					$atLeastOneResultSet = true;
 					$langNoJson = substr($lang, 0, strlen($lang) - 5);
-					echo "<p><label><input type='checkbox' name='$file/$langNoJson'/><a href='/output/$file/$langNoJson.html'>" . urldecode($file) . " – $langNoJson</a></label></p>";
+					echo "<p><label><input type='checkbox' name='$file/$langNoJson'/><a href='/all.php?".urlencode($file.'/'.$langNoJson)."=on'>" . urldecode($file) . " – $langNoJson</a></label></p>";
 				}
 			}
 		}
