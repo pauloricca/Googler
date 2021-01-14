@@ -10,7 +10,7 @@ Open the directory in the terminal (you can drag it to the terminal icon on Mac)
 You can change the port or the number of search result pages requested on the config.php file (can be opened using a text editor).
 
 ## Being blocked by Google?
-After running a few queries, Google might start blocking you. To unblock yourself you need to visit Google and solve a robot challenge.
+After running a few queries, Google might start blocking you. To unblock yourself you need to visit https://www.google.com and solve a robot challenge.
 
 ## Location
 Google search results will target your location based on your IP. To get results from different locations you'll have to either:
