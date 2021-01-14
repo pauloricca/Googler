@@ -17,3 +17,6 @@ Google search results will target your location based on your IP. To get results
 1. Run this on a server located elsewhere;
 1. Ask a friend that lives elsewhere to run it for you;
 1. Use a VPN. 
+
+## Google's Terms of Use
+Using this tool goes against Google's terms and conditions so you should be aware and use it responsibly. This tool was developed for academic purposes.
