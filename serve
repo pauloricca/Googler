@@ -1,0 +1,5 @@
+<?php
+$config = include __DIR__.'/config.php';
+$url = 'localhost:'.$config['port'];
+echo "\n Visit http://$url on a browser (or Cmd+double-click the URL on a mac)\n\n";
+exec("php -S $url");
