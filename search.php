@@ -51,7 +51,7 @@ while($page < $config['number of search result pages'])
 		console.log('done processing results');
 
 		$.post("save.php?query=<?=$search_query?>",urls.join(','),function(data,status,xhr){
-			window.location = '/all.php?'+encodeURIComponent(data)+'=on';
+			window.location = '/results.php?'+encodeURIComponent(data)+'=on';
 			console.log('results saved');
 		},"text");
 
