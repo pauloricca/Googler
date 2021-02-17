@@ -34,17 +34,40 @@ while($page < $config['number of search result pages'])
 		urls = [];
 		var nUrl = 0;
 		var csv = "";
-		$("#search a[data-ved]").each(function(){
+		//$("#search a[data-ved]").each(function(){
+		$("a").each(function(){
 			var url = $(this).attr("href");
 			if(!url) return;
-			if(url.startsWith("http") && !url.startsWith("https://webcache") && !url.startsWith("http://webcache") && !urls.includes(url))
+
+			/*if(url.startsWith("http") && !url.startsWith("https://webcache") && !url.startsWith("http://webcache"))
 			{
 				url = url.split(',').join('%2C');
-				nUrl++;
-				console.log(nUrl + ": " + url);
-				urls.push(url);
-				csv += url + "\n";
+			}*/
+
+			// url in the form of:
+			// /url?esrc=s&amp;q=&amp;rct=j&amp;sa=U&amp;url=https://www.youtube.com/watch%3Fv%3DfFLqwKzfe8U&amp;ved=2ahUKEwiv4fqR1PHuAhWJTsAKHSIkAyY4ARC3AjAAegQIBRAB&amp;usg=AOvVaw09wXP4hPWQPF_zgragCURl
+			if(url.startsWith("/url?"))
+			{
+				// parse URL
+				var urlObj = new URL('https://www.google.com' + url);
+				url = urlObj.searchParams.get('url');
+				//console.log(urlObj);
+				if(url.startsWith("https://support.google.com")) return;
+				if(url.startsWith("https://accounts.google.com")) return;
 			}
+			else
+			{
+				return;
+			}
+
+			if(urls.includes(url)) return;
+
+			nUrl++;
+			console.log(nUrl + ": " + url);
+			urls.push(url);
+			csv += url + "\n";
+
+			
 		});
 		console.log(csv);
 		console.log(urls.join());

@@ -1,4 +1,4 @@
 <? return [
 	'port' => '8886',
-	'number of search result pages' => 5
+	'number of search result pages' => 10
 ];

@@ -1,6 +1,6 @@
 <?
 include __DIR__.'/location.php';
-include_once __DIR__.'/htmloutput.php';
+//include_once __DIR__.'/htmloutput.php';
 
 $data = file_get_contents('php://input');
 $query = urlencode($_GET["query"]);
